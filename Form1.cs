@@ -17,20 +17,20 @@ namespace MonitorSerial
         SerialPort serial = new SerialPort();
         string bfRecebe = string.Empty;
 
-        public delegate void Fdelegate(string a);
+        public delegate void Fdelegate(string a); //criar a delegate
        
 
         public Form1()
         {
             InitializeComponent();
-            serial.DataReceived += new SerialDataReceivedEventHandler(SerialCom_DataReceived);
+            serial.DataReceived += new SerialDataReceivedEventHandler(SerialCom_DataReceived);//instaciar dados recebidos pela serial
         }
 
         private void SerialCom_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             //throw new NotImplementedException();
             bfRecebe = serial.ReadExisting();//recebe a leitura da serial
-            this.BeginInvoke(new Fdelegate(recebe_serial), new object[] { bfRecebe });
+            this.BeginInvoke(new Fdelegate(recebe_serial), new object[] { bfRecebe }); //invocar  a delagete e o metodo recebe serial
         }
 
         public void recebe_serial(string a)
@@ -104,7 +104,7 @@ namespace MonitorSerial
            #endregion fim carrega stop bits
         }
 
-        private void btAbrir_Click(object sender, EventArgs e)
+        private void btAbrir_Click(object sender, EventArgs e)//abre a porta serial
         {
             if (serial.IsOpen == true)
             {
@@ -116,18 +116,16 @@ namespace MonitorSerial
             serial.Parity = (Parity)cbxParidade.SelectedIndex;
             serial.DataBits = Int32.Parse(cbxBitsDados.Text);
             serial.StopBits = (StopBits)cbxBitParada.SelectedIndex;
+            
 
             try
             {
-
+                btAbrir.BackColor = Color.Green;
+                btFechar.BackColor = Color.Red;
                 serial.Open();                       /*abre a porta*/
                 btAbrir.Enabled = false;
                 btFechar.Enabled = true;
                 btSair.Enabled = false;
-
-
-
-
 
             }
             catch
@@ -136,7 +134,8 @@ namespace MonitorSerial
                 btAbrir.Enabled = true;
                 btFechar.Enabled = false;
                 btSair.Enabled = true;
-
+                btAbrir.BackColor = Color.Blue;
+                btFechar.BackColor = Color.Blue;
 
             }
 
@@ -148,16 +147,25 @@ namespace MonitorSerial
             btAbrir.Enabled = true;
             btFechar.Enabled = false;
             btSair.Enabled = true;
+            btAbrir.BackColor = Color.Blue;
+            btFechar.BackColor = Color.Blue;
 
         }
 
-        private void btEnvia_Click(object sender, EventArgs e)
+        private void btEnvia_Click(object sender, EventArgs e)//envia
         {
             if (serial.IsOpen) // se a serial estiver aberta
             {
-
-                serial.Write(txbTransmite.Text +"\r\n"); //escreve na serial
-                txbTransmite.Text = "";
+                if (checkBoxCR.Checked)
+                {
+                    serial.Write(txbTransmite.Text + "\r\n"); //escreve na serial
+                    txbTransmite.Text = "";
+                }
+                else
+                {
+                    serial.Write(txbTransmite.Text); //escreve na serial
+                    txbTransmite.Text = "";
+                }
             }
         }
     }
