@@ -15,13 +15,32 @@ namespace MonitorSerial
     public partial class Form1 : Form
     {
         SerialPort serial = new SerialPort();
+        string bfRecebe = string.Empty;
+
+        public delegate void Fdelegate(string a);
+       
+
         public Form1()
         {
             InitializeComponent();
+            serial.DataReceived += new SerialDataReceivedEventHandler(SerialCom_DataReceived);
+        }
+
+        private void SerialCom_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            bfRecebe = serial.ReadExisting();//recebe a leitura da serial
+            this.BeginInvoke(new Fdelegate(recebe_serial), new object[] { bfRecebe });
+        }
+
+        public void recebe_serial(string a)
+        {
+            txbREcebeSerial.Text += a;
+
         }
 
         private void btSair_Click(object sender, EventArgs e)
-        {
+        {                      
             this.Close();
         }
 
@@ -137,7 +156,8 @@ namespace MonitorSerial
             if (serial.IsOpen) // se a serial estiver aberta
             {
 
-                serial.Write(txbTransmite.Text); //escreve na serial
+                serial.Write(txbTransmite.Text +"\r\n"); //escreve na serial
+                txbTransmite.Text = "";
             }
         }
     }

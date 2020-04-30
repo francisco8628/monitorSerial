@@ -44,6 +44,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btEnvia = new System.Windows.Forms.Button();
             this.txbTransmite = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txbREcebeSerial = new System.Windows.Forms.TextBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -158,7 +161,7 @@
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(630, 76);
+            this.btSair.Location = new System.Drawing.Point(630, 235);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(75, 26);
             this.btSair.TabIndex = 12;
@@ -192,13 +195,32 @@
             this.txbTransmite.Size = new System.Drawing.Size(316, 20);
             this.txbTransmite.TabIndex = 16;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txbREcebeSerial);
+            this.groupBox1.Location = new System.Drawing.Point(15, 119);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(527, 142);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Recepção";
+            // 
+            // txbREcebeSerial
+            // 
+            this.txbREcebeSerial.Location = new System.Drawing.Point(6, 19);
+            this.txbREcebeSerial.Multiline = true;
+            this.txbREcebeSerial.Name = "txbREcebeSerial";
+            this.txbREcebeSerial.Size = new System.Drawing.Size(515, 117);
+            this.txbREcebeSerial.TabIndex = 17;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(714, 129);
+            this.ClientSize = new System.Drawing.Size(714, 273);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txbTransmite);
             this.Controls.Add(this.btEnvia);
             this.Controls.Add(this.label6);
@@ -219,6 +241,8 @@
             this.Name = "Form1";
             this.Text = "Monitor Serial";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,6 +266,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btEnvia;
         private System.Windows.Forms.TextBox txbTransmite;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txbREcebeSerial;
     }
 }
 
