@@ -1,0 +1,4 @@
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\app20.csprojAssemblyReference.cache
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\MonitorSerial.Form1.resources
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\app20.Properties.Resources.resources
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\app20.csproj.GenerateResource.cache

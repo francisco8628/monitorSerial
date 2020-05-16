@@ -1,0 +1,8 @@
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\bin\Debug\WindowsApplication.exe.config
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\bin\Debug\WindowsApplication.exe
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\bin\Debug\WindowsApplication.pdb
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\MonitorSerial.Form1.resources
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\app22.Properties.Resources.resources
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\app22.csproj.GenerateResource.cache
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\WindowsApplication.exe
+C:\Workspace-c#-aplicativos\MonitorSerial\MonitorSerial\obj\x86\Debug\WindowsApplication.pdb
